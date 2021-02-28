@@ -81,10 +81,10 @@ export function parse(obj: any): MetaType[] {
     return arr;
 }
 
-export function diff(obj1: any, obj2: any) {
+export function diff(obj1: any, obj2: any, direction: MergeDirection = MergeDirection.Both) {
     const p1 = parse(obj1);
     const p2 = parse(obj2);
-    const p3 = merge(p1, p2, MergeDirection.Left);
+    const p3 = merge(p1, p2, direction);
     return create(p3);
 }
 export function getMergeKeys(arr1: string[], arr2: string[], direction: MergeDirection) {
@@ -226,7 +226,10 @@ export function create(metaTypes:  MetaType[]) {
             if (Array.isArray(obj)) {
                 obj.push(c.value)
             } else {
-                obj[prop] = c.value
+                if (obj) {
+                    obj[prop] = c.value
+           
+                }                
             }
         }
         return p
