@@ -1,0 +1,28 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": ".",
+      "sourceMap": true,
+      "declaration": true,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "importHelpers": true,
+      "target": "es2015",
+      "module": "esnext",
+      "lib": ["es2017", "dom"],
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "baseUrl": ".",
+      "esModuleInterop": true,
+      "paths": {
+      }
+    },
+    "files": ["index.ts"],
+    "include": ["src/**/*", "index.ts"],
+    "exclude": ["node_modules"]
+  }
+  

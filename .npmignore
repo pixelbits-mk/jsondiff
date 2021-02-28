@@ -1,0 +1,8 @@
+  
+test/
+src/
+node_modules/
+dist/src/
+.gitignore
+rollup.config.js
+tsconfig.js
