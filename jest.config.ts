@@ -4,21 +4,28 @@
  */
 
 export default {
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
-  },
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js",
-    "jsx",
-    "json",
-    "node"
-  ],
-  "setupFiles": [
-    //"<rootDir>/test/setupTests.ts"
-  ],
+  preset: "ts-jest",
+  //testEnvironment: "node",
+  roots: ["./src"],
+  transform: { "\\.ts$": ["ts-jest"] },
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+
+  // "transform": {
+  //   "^.+\\.tsx?$": "ts-jest"
+  // },
+  // "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  // "moduleFileExtensions": [
+  //   "ts",
+  //   "tsx",
+  //   "js",
+  //   "jsx",
+  //   "json",
+  //   "node"
+  // ],
+  // "setupFiles": [
+  //   //"<rootDir>/test/setupTests.ts"
+  // ],
   // verbose: true,
   // // setupFilesAfterEnv: ["<rootDir>src/setupTests.ts"],
   // moduleFileExtensions: ["js", "jsx", "ts", "tsx"],

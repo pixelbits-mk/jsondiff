@@ -55,6 +55,14 @@ test("difference in array should return changed array", () => {
   expect(diff).toEqual({ array: [1, 3] });
 });
 
+test("difference in both arrays should return changed array", () => {
+    const diff = jsondiff.diff(
+      { name: "test", array: [1,2,3] },
+      { name: "test", array: [4, 5, 6] }
+    );
+    expect(diff).toEqual({ array: [4, 5, 6] });
+  });
+
 test("nested object target", () => {
   const diff = jsondiff.diff(
     {
@@ -117,3 +125,34 @@ test("nested property change", () => {
     });
   });
   
+  test('test', () => {
+    const x = {
+        foo: { bar: 3 },
+        array: [{
+            does: 'work',
+            too: [ 1, 2, 3 ]
+        }]
+    }
+    
+    const y = {
+        foo: { baz: 4 },
+        quux: 5,
+        array: [{
+            does: 'work',
+            too: [ 4, 5, 6 ]
+        }, {
+            really: 'yes'
+        }]
+    }
+
+    const diff = jsondiff.diff(x, y)
+    expect(diff).toEqual(    {
+        foo: { bar: null, baz: 4 },
+        quux: 5,
+        array: [{ 
+            too: [4, 5, 6]
+        }, { 
+            really: 'yes' 
+        }],
+      })
+  })
