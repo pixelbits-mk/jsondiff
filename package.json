@@ -1,5 +1,5 @@
 {
-  "name": "jsondiff",
+  "name": "@pixelbits/jsondiff",
   "description": "A library for producing of diff of Javascript objects",
   "keywords": [
     "json",
@@ -21,7 +21,8 @@
     "build": "tsc && rollup -c",
     "test": "npm run build && tape test/*.js && jsmd readme.md && npm run test:typescript",
     "test:typescript": "tsc --noEmit test/typescript.ts && ts-node test/typescript.ts",
-    "size": "npm run build && uglifyjs --compress --mangle --output dist/cjs.js -- dist/cjs.js && uglifyjs --compress --mangle --output dist/umd.js -- dist/umd.js"
+    "size": "npm run build && uglifyjs --compress --mangle --output dist/cjs.js -- dist/cjs.js && uglifyjs --compress --mangle --output dist/umd.js -- dist/umd.js",
+    "publish": "npm publish --access public"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
@@ -38,5 +39,6 @@
   "bugs": {
     "url": "https://github.com/pixelbits-mk/jsondiff/issues"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "author": ""
 }
