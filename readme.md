@@ -123,7 +123,7 @@ jsondiff.diff(
 	{ foo: 'bar' },
 	{ foo: 'bar2', test: 'test' },
     MergeDirection.Left
-) // => { foo: 'bar2', test: null }
+) // => { foo: 'bar2', test: 'test' }
 ```
 
 
